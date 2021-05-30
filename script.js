@@ -77,6 +77,30 @@ for (let objKeys in entertainment) {
 	}
 
 	//Case TV Shows - choose between types of TV Shows
-
-
+	if (recommendation[0] == 'TV Shows' && recommendation[1] == 'Action TV Show') {
+		switch(objKeys) {
+			case 'actionSeries':
+				recommendation.push(element);
+			break;
+		}
+	} else if (recommendation[0] == 'TV Shows' && recommendation[1] == 'Comedy TV Shows') {
+		switch(objKeys) {
+			case 'comedySeries':
+				recommendation.push(element);
+			break;
+		}
+	} else if (recommendation[0] == 'TV Shows' && recommendation[1] == 'Romance TV Shows') {
+		switch(objKeys) {
+			case 'romanceSeries':
+				recommendation.push(element);
+			break;
+		}
+	} else if (recommendation[0] == 'TV Shows' && recommendation[1] == 'Sci-fi TV Shows') {
+		switch(objKeys) {
+			case 'sci_fi_Series':
+				recommendation.push(element);
+			break;
+		}
+	}
+}
 
