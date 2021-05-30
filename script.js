@@ -30,21 +30,21 @@ for (let objKeys in entertainment) {
 	//Randomly selected element in objects shows key
 	switch(objKeys) {
 		case 'shows':
-			recomendation.push(element);
+			recommendation.push(element);
 		break;
 	}
 
 	//Checks if first element in recommendation array is 'Movies' or 'TV Shows' and pushs randomly pushed objects type key with string
-	if (recommendation[0] == 'Moives') {
+	if (recommendation[0] == 'Movies') {
 		switch(objKeys) {
 			case 'type':
-				recommendation.push(element + 'Movie');
+				recommendation.push(element + ' Movie');
 			break;
 		}
 	} else if (recommendation[0] == 'TV Shows') {
 		switch(objKeys) {
 			case 'type':
-				recommendation.push(elements + 'TV Shows');
+				recommendation.push(element + ' TV Show');
 			break;
 		}
 	}
@@ -59,7 +59,7 @@ for (let objKeys in entertainment) {
 	} else if (recommendation[0] == 'Movies' && recommendation[1] == 'Comedy Movie') {
 		switch(objKeys) {
 			case 'comedyMovies':
-				recommedation.push(element);
+				recommendation.push(element);
 			break;
 		}
 	} else if (recommendation[0] == 'Movies' && recommendation[1] == 'Romance Movie') {
@@ -70,7 +70,7 @@ for (let objKeys in entertainment) {
 		}
 	} else if (recommendation[0] == 'Movies' && recommendation[1] == 'Sci-fi Movie') {
 		switch(objKeys) {
-			case 'sci_fi_Movies:
+			case 'sci_fi_Movies':
 				recommendation.push(element);
 			break;
 		}
@@ -83,19 +83,19 @@ for (let objKeys in entertainment) {
 				recommendation.push(element);
 			break;
 		}
-	} else if (recommendation[0] == 'TV Shows' && recommendation[1] == 'Comedy TV Shows') {
+	} else if (recommendation[0] == 'TV Shows' && recommendation[1] == 'Comedy TV Show') {
 		switch(objKeys) {
 			case 'comedySeries':
 				recommendation.push(element);
 			break;
 		}
-	} else if (recommendation[0] == 'TV Shows' && recommendation[1] == 'Romance TV Shows') {
+	} else if (recommendation[0] == 'TV Shows' && recommendation[1] == 'Romance TV Show') {
 		switch(objKeys) {
 			case 'romanceSeries':
 				recommendation.push(element);
 			break;
 		}
-	} else if (recommendation[0] == 'TV Shows' && recommendation[1] == 'Sci-fi TV Shows') {
+	} else if (recommendation[0] == 'TV Shows' && recommendation[1] == 'Sci-fi TV Show') {
 		switch(objKeys) {
 			case 'sci_fi_Series':
 				recommendation.push(element);
@@ -104,3 +104,15 @@ for (let objKeys in entertainment) {
 	}
 }
 
+//This function will format final output
+function formatRecommendation(video) {
+	const firstElement = "Today is wonderful day to watch: " + recommendation[0] + ".";
+	const secondElement = "And if you're in mood for: " + recommendation[1] + ".";
+	const thirdElement = "I would like to recommend: " + recommendation[2] + ".";
+	//Output which will be printed
+	const finalOutput = [firstElement, secondElement, thirdElement];
+	console.log(finalOutput.join('\n'));
+}
+
+//Function call
+formatRecommendation(recommendation);
